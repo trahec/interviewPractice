@@ -2,23 +2,18 @@
 * Return a set containing unique values from two given sets
 */
 
-var arrayA = ['a', 'b', 'g', 'c', 'd', 'x'];
-var arrayB = ['c', 'd', 'e', 'f', 'g'];
-var concatArray = arrayA.concat(arrayB); 
-var uniqueArray = [];
-
-function createUniqueArray(loopArray, analyseArray){
-	
-	for(var x=0; x<loopArray.length; x++)
-	{
-		var value = loopArray[x];
-		if(analyseArray.indexOf(value) > -1){
-		}
-		else{
-			uniqueArray.push(value);
-		}
-	}
+Set.prototype.difference = function(setB) {
+    var differenceSet = new Set(this);
+    for (var elem of setB) {
+        differenceSet.delete(elem);
+    }
+    return differenceSet;
 }
-createUniqueArray(arrayA, arrayB);
-createUniqueArray(arrayB, arrayA);
-console.log("Original arrays: \n" + arrayA + "\n" + arrayB + "\nUnique array: \n" + uniqueArray);
+
+Set.prototype.union = function(setB) {
+    var unionSet = new Set(this);
+    for (var elem of setB) {
+        unionSet.add(elem);
+    }
+    return unionSet;
+}

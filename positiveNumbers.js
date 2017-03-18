@@ -1,24 +1,30 @@
 /*
 * Given an array, return a new array with only positive numbers, sorted in ascending order
 */
-
-var mixedArray = [-1, -2, 100, 89, 3, 8, -11, 4, 7, -5, -12, 0, 99];
+var exports = module.exports = {};
 var positiveArray = [];
+var error = {};
 
-function cleanseArray(array){
+exports.cleanseArray = function(array){
+
 	for(var x=0; x<array.length; x++){
 		var value = parseInt(array[x]);
-		if(value > 0){
-			positiveArray.push(value);
+		if(!isNaN(value)){
+			if(value > 0){
+				positiveArray.push(value);
+			}
+		}
+		else{
+			error['code'] = 500;
+			error['message'] = "Array contains non-numeric element " + value + " at index " + x;
+			return error;
 		}
 	}
-	positiveArray.sort(sortNumeric);
+	return positiveArray.sort(sortNumeric);
+	console.log(positiveArray); 
 }
 
 //sort function applies an alphabetic sort, so have to provide a numberic sort as callback
 function sortNumeric(a,b) {
     return a - b;
 }
-
-cleanseArray(mixedArray);
-console.log(positiveArray);
