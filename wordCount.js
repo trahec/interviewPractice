@@ -3,10 +3,11 @@
 */
 var testString = "  The quick brown fox jumps 	over the lazy dog. "
 
-function wordCount(string){
+function getWordCount(string){
 	var array = string.match(/\S+/g);
 	return array.length;
 }
 
-var wordCount = wordCount(testString);
+var wordCount = getWordCount(testString);
+
 console.log("There are " + wordCount + " words in this string: \n\"" + testString + "\"");
