@@ -11,7 +11,7 @@ function getIntersection(array1, array2){
 		loopArray = array1;
 		checkedArray = array2;
 	}
-	else{
+	else{//covers if arrayB is less than arrayA, or if they are of equal length
 		loopArray = array2;
 		checkedArray = array1;
 	}
@@ -22,7 +22,7 @@ function getIntersection(array1, array2){
 			resultArray.push(value);
 		}
 	}
+	console.log("Arrays Given:\n" + array1 + "\n" + array2 + "\nIntersection:\n" + resultArray)
 }
 
 getIntersection(['a', 'b', 'g', 'c', 'd', 'x'], ['c', 'd', 'e', 'f', 'g']);
-console.log(resultArray);
