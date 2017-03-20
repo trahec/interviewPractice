@@ -1,1 +1,1 @@
-node C:\Users\Ph4g3\Documents\Christine\dev\interviewPractice\node_modules\jasmine-node\bin\jasmine-node --test-dir C:\Users\Ph4g3\Documents\Christine\dev\interviewPractice\spec
+node .\node_modules\jasmine-node\bin\jasmine-node --test-dir .\spec
