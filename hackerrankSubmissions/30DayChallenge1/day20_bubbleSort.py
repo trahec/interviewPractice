@@ -1,12 +1,14 @@
 #!/bin/python3
 
+# https://www.hackerrank.com/challenges/30-sorting
+
 import sys
 
 class Sort:
     'class for sorting algorithms'
     
     def __init__(self):
-        self
+        pass
         
     def bubbleSort(self, array):      
         rangeValue = len(array)-1
@@ -18,11 +20,11 @@ class Sort:
                 if(array[i] > array[i+1]):
                     'swap values'
                     swapOccured = True
-                    totalSwaps = totalSwaps+1
+                    totalSwaps += 1
                     temp = array[i]
                     array[i] = array[i+1]
                     array[i+1] = temp
-            rangeValue = rangeValue-1; 
+            rangeValue -= 1; 
         print("Array is sorted in " + str(totalSwaps) + " swaps.")
         return array
     
